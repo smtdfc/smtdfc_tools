@@ -7,7 +7,7 @@
 		"dev": "rumious build dev -w",
 		"style": "esbuild src/styles/main.css --bundle --outfile=public/dist/styles/index.css --loader:.css=css --loader:.ttf=file --loader:.otf=file --minify",
 		"start": "node dist/index.js",
-		"build:all":"export NODE_ENV='production' && rollup -c && npm run style",
+		"build:all":"export NODE_ENV='production' && rollup -c -bundleConfigAsCjs && npm run style",
 		"test": "echo \"No tests yet\""
 	},
 	"dependencies": {
