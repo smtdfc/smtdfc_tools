@@ -1,4 +1,5 @@
 {
+	"type":"module",
 	"scripts": {
 		"dec": "tsc --declaration --allowJs --emitDeclarationOnly",
 		"type": "tsc --noEmit",
