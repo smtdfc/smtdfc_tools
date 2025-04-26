@@ -1,0 +1,45 @@
+@import "../../node_modules/lightiz-ui/main.css";
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Inter'),
+		url('../fonts/Inter_28pt-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    url('../fonts/MaterialIconsOutlined-Regular.otf') format('truetype');
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.material-symbols-outlined,
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
