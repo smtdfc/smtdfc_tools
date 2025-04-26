@@ -5,7 +5,7 @@
 		"build": "rumious build prod",
 		"build:dev": "rumious build dev ",
 		"dev": "rumious build dev -w",
-		"style": "esbuild src/styles/main.css --bundle --outfile=public/styles/index.css --loader:.css=css --loader:.ttf=file --loader:.otf=file --minify",
+		"style": "esbuild src/styles/main.css --bundle --outfile=public/dist/styles/index.css --loader:.css=css --loader:.ttf=file --loader:.otf=file --minify",
 		"start": "node dist/index.js",
 		"build:all":"npm run style && npm run build",
 		"test": "echo \"No tests yet\""
