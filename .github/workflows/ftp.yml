@@ -26,5 +26,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: './deployment' 
-          remote-dir: '/path/to/remote/folder'  #
+          remote-dir: '/tools.smtdfc.rf.gd/htdocs'  #
           port: 21  
