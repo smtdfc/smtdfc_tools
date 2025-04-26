@@ -1,0 +1,30 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'deployment/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Deploy to FTP
+        uses: appleboy/ftp-action@v1.0.0
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './deployment' 
+          remote-dir: '/path/to/remote/folder'  #
+          port: 21  
