@@ -21,6 +21,9 @@ export class Navbar extends RumiousComponent < NavbarProps > {
     window.addEventListener('scroll', onScroll);
   }
   
+  onDestroy(){
+    
+  }
   
   template() {
     return (
