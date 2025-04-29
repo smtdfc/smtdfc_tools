@@ -7,7 +7,7 @@ import os from 'os';
 const shouldMinify = process.env.MINIFY === 'true' || process.env.NODE_ENV === 'production';
 
 export default {
-  input: 'src/index.tsx',
+  input: 'ui/index.tsx',
   output: {
     dir: 'public/dist',
     format: 'esm',

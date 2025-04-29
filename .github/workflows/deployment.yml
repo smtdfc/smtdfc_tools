@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'
+      - 'ui/**'
+      - 'netlify/**'
       - 'package.json'
       - 'tsconfig.json'
       - 'rumious.configs.json'
