@@ -21,6 +21,7 @@ export class Navbar extends RumiousComponent < NavbarProps > {
     window.addEventListener('scroll', onScroll);
   }
   
+  
   template() {
     return (
       <div class="navbar navbar-shadow" style="background: transparent;">
