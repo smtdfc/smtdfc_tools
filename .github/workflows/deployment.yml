@@ -29,6 +29,12 @@ jobs:
 
       - name: Build project
         run: npm run build:all
+      
+      - name: Move netlify config & functions to public
+        run: |
+          mkdir -p public/netlify
+          cp -r netlify/* public/netlify/
+          cp netlify.toml public/
 
       - name: Deploy
         uses: nwtgck/actions-netlify@v2
