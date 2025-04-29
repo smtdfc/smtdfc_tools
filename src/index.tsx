@@ -8,7 +8,7 @@ const router = initRouter(app);
 app.render(
   <Fragment>
     <Navbar />
-    <div style="margin-top:5rem;" class="container">{router.rootInject}</div>
+    <div>{router.rootInject}</div>
   </Fragment>
 );
 

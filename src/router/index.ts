@@ -11,7 +11,6 @@ export function initRouter(app: RumiousApp): RumiousRouterModule {
     console.log('not_found');
   });
   
-  
   router.addRoute('/',(async ()=> (await import('../pages/home.tsx')).Page),[]);
   
   return router;

@@ -19,7 +19,6 @@ export default {
       }
     },
     chunkFileNames: (chunkInfo) => {
-      console.log(chunkInfo)
       if (chunkInfo.moduleIds.some(id => id.includes('node_modules'))) {
         return 'vendor/[name].js';
       }
