@@ -1,5 +1,5 @@
 <?php
-  $FRONTEND_HOST = "https://tools.smtdfc.rf.gd"; 
+  $FRONTEND_HOST = ""; 
 ?>
 
 <!DOCTYPE html>
