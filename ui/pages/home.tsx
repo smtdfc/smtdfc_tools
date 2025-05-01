@@ -1,15 +1,15 @@
-import { RumiousComponent, createElementRef, Fragment, RumiousState, RumiousArrayState, createArrayState, createState, watch, denounce, renderDynamicArray } from 'rumious';
+import { RumiousComponent, createElementRef, Fragment, RumiousState, RumiousArrayState, createArrayState, createState, watch, denounce, renderList } from 'rumious';
 import { RumiousRouterPageProps } from 'rumious-router';
 import { ToolCard } from '../components/ToolCard.js';
 import { AppContext } from '../context/app.js';
 import { ToolInfo } from "../types/tool.js";
-import {getRandomGradient} from "../utils/background.js";
+import { getRandomGradient } from "../utils/background.js";
 
 export class Page extends RumiousComponent < RumiousRouterPageProps > {
   static tagName = "smtdfc-tool-page-home";
   private search: RumiousState < string > ;
   private tools!: RumiousArrayState < ToolInfo > ;
-  private headerRef:ReturnType<typeof createElementRef>;
+  private headerRef: ReturnType < typeof createElementRef > ;
   constructor() {
     super();
     this.headerRef = createElementRef();
@@ -31,7 +31,7 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
   }
   
   private filterTools() {
-    this.tools.filter((data: ToolInfo)=>{
+    this.tools.filter((data: ToolInfo) => {
       return data.name.includes(this.search.value)
     });
   }
@@ -40,9 +40,9 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
     watch(this.search, this.handleSearch);
   }
   
-  onRender(){
+  onRender() {
     this.headerRef.setStyle({
-      background:getRandomGradient()
+      background: getRandomGradient()
     })
   }
   
@@ -62,11 +62,12 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
                   <p>No tools found. Try another search!</p>
                 </div>
               ) : (
-                renderDynamicArray(this.tools!, (data) => {
+                renderList(this.tools!, (data) => {
                   return <ToolCard name={data.name} group={data.group} />;
                 })
               )}
             </div>
+
           </div>
         </div>
       </Fragment>

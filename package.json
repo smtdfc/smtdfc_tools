@@ -14,7 +14,8 @@
 	"dependencies": {
 		"lightiz-ui": "^0.0.3",
 		"rumious": "*",
-		"rumious-router": "^1.0.0"
+		"rumious-router": "^1.0.0",
+		"@supabase/supabase-js":"*"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.26.10",
