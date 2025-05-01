@@ -1,4 +1,10 @@
-import { RumiousComponent, createElementRef, Fragment, RumiousState, RumiousArrayState, createArrayState, createState, watch, denounce, createInfinityScroll } from 'rumious';
+import {
+  RumiousComponent,
+  Fragment,
+  RumiousState,
+  createState,
+  createInfinityScroll
+} from 'rumious';
 import { RumiousRouterPageProps } from 'rumious-router';
 import { ToolCard } from '../components/ToolCard.js';
 import { AppContext } from '../context/app.js';
@@ -16,7 +22,7 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
   
   onRender() {
     let tools = AppContext.get("tools");
-    if(tools && tools.get().length ==0){
+    if (tools && tools.get().length == 0) {
       this.infinityScrollController.set("FETCH");
     }
     
