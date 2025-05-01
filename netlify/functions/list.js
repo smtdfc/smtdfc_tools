@@ -21,9 +21,8 @@ exports.handler = async (event, context) => {
   
   
   const params = event.queryStringParameters;
-  const page = parseInt(params.page || '1', 10);
+  const offset = parseInt(params.offset || '1', 10);
   const limit = parseInt(params.limit || '10', 10);
-  const offset = (page) * limit;
   
   const { data, count, error } = await supabase
     .from('tools')
