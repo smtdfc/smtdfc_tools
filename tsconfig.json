@@ -12,6 +12,6 @@
 		"module": "NodeNext",
 		"moduleResolution":"nodenext"
 	},
-	"include": ["src/**/*", "**/jsx.d.ts"],
+	"include": ["ui/**/*", "**/jsx.d.ts"],
 	"exclude": ["node_modules"]
 }

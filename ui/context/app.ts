@@ -1,12 +1,12 @@
-import { createContext } from 'rumious';
+import { createContext,createArrayState } from 'rumious';
 import { ToolInfo ,ToolGroupInfo} from "../types/tool.js";
 
 interface IAppContext {
-  tools: ToolInfo[];
+  tools: ReturnType<typeof createArrayState>;
   groups:ToolGroupInfo[];
 }
 
 export const AppContext = createContext < IAppContext > ({
-  tools:[],
+  tools:createArrayState<ToolInfo>([]),
   groups:[]
 });
