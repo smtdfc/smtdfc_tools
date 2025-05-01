@@ -49,7 +49,7 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
             <div class="card-group list-tool">
               {createInfinityScroll({
                   data:AppContext.get("tools")!,
-                  template:(data)=> <ToolCard name={data.name} group={data.group}/>,
+                  template:(data)=> <ToolCard name={data.name} group={data.group} description={data.description}/>,
                   scrollElement: window,
                   loader:(limit,offset)=> ToolService.getTool(limit,offset+1),
                   controller:this.infinityScrollController!,
