@@ -3,7 +3,9 @@ import {
   Fragment,
   RumiousState,
   createState,
-  createInfinityScroll
+  createInfinityScroll,
+  watch,
+  createElementRef
 } from 'rumious';
 import { RumiousRouterPageProps } from 'rumious-router';
 import { ToolCard } from '../components/ToolCard.js';
@@ -14,18 +16,24 @@ import { ToolService } from "../services/tool.js";
 export class Page extends RumiousComponent < RumiousRouterPageProps > {
   static tagName = "smtdfc-tool-page-home";
   private infinityScrollController: RumiousState < string > ;
-  
+  private infinityScrollState: RumiousState < string > ;
+  private loaderRef:ReturnType<typeof createElementRef>;
   constructor() {
     super();
+    this.infinityScrollState = createState < string > ("");
     this.infinityScrollController = createState < string > ("");
+    this.loaderRef = createElementRef();
   }
   
   onRender() {
+    watch(this.infinityScrollState,(commit)=>{
+      if(commit.value == "START_FETCH") this.loaderRef.removeClassName("d-none");
+      else this.loaderRef.addClassName("d-none");
+    });
     let tools = AppContext.get("tools");
     if (tools && tools.get().length == 0) {
       this.infinityScrollController.set("FETCH");
     }
-    
   }
   
   template() {
@@ -43,15 +51,18 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
                   data:AppContext.get("tools")!,
                   template:(data)=> <ToolCard name={data.name} group={data.group}/>,
                   scrollElement: window,
-                  loader:ToolService.getTool,
+                  loader:(limit,offset)=> ToolService.getTool(limit,offset+1),
                   controller:this.infinityScrollController!,
+                  state:this.infinityScrollState,
                   limit:20,
                   offset:0,
                   threshold:30
                 })
               }
             </div>
-
+            <div ref={this.loaderRef} class="loader" style="width: 100vw;display: flex; justify-content: center; align-items: center;">
+              <div class="spinner-loader"></div>
+            </div>
           </div>
         </div>
       </Fragment>

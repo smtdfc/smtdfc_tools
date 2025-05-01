@@ -6,8 +6,8 @@ export class ToolService {
     let res = await fetch(`https://smtdfc-tools.netlify.app/.netlify/functions/list?page=${page}&limit=${limit}`, {
       method: "post",
     });
-    let result = await res.json() as ToolInfo[];
-    return result;
+    let result = await res.json();
+    return result.data as ToolInfo[];
   }
   
 }

@@ -2,7 +2,8 @@ import { RumiousComponent, Fragment } from 'rumious';
 
 interface ToolCardProps {
   name:string,
-  group: string 
+  group: string ,
+  description?: string
 };
 
 export class ToolCard extends RumiousComponent < ToolCardProps > {
@@ -18,7 +19,7 @@ export class ToolCard extends RumiousComponent < ToolCardProps > {
             <span class="badge badge-filled badge-success">{this.props.group}</span>
           </div>
           <div class="p-3 sub-text">
-            Simple expression with Math.js
+            {this.props.description ?? ""}
           </div>
           <div class="d-flex align-center justify-between p-1">
             <button class="ml-auto btn btn-icon material-icons">arrow_forward</button>
