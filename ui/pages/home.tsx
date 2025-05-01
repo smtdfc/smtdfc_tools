@@ -44,10 +44,10 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
     return (
       <Fragment>
         <div>
-          <div class="d-flex align-center flex-col justify-center" style="min-height:50vh; transition: background 1s ease-in -out;background-attachment: fixed;background-size: cover; ">
+          <div class="d-flex align-center flex-col justify-center" style="background: linear-gradient(to right, #84fab0, #8fd3f4); min-height:50vh; transition: background 1s ease-in -out;background-attachment: fixed;background-size: cover; ">
             <h2 class="my-4">Select your tool</h2>
             <p class="description">Discover powerful tools crafted for your success!</p>
-            <input  type="text" class="form-input search-box" placeholder="Search tool here ..." />
+            <input  type="text" class="form-input search-box" placeholder="Search tool here ..." style ="min-width:60%;" />
           </div>
           <div>
             <div class="card-group list-tool">
@@ -64,8 +64,8 @@ export class Page extends RumiousComponent < RumiousRouterPageProps > {
                 })
               }
             </div>
-            <div ref={this.loaderRef} class="loader" style="width: 100vw;display: flex; justify-content: center; align-items: center;">
-              <div class="spinner-loader"></div>
+            <div ref={this.loaderRef} class="loader loader-sm" style="width: 100vw;display: flex; justify-content: center; align-items: center;">
+              <div class="spinner-loader loader-sm"></div>
             </div>
           </div>
         </div>

@@ -46,6 +46,7 @@
 
 .navbar{
   z-index: 1001!important;
+  transition: background 0.3s ease;
 }
 
 .seach-box {
@@ -67,7 +68,7 @@
 
 @media (max-width: 48rem) {
   .seach-box {
-    width: 90%;
+    width: 90%!important;
   }
   
   .list-tool {
