@@ -23,7 +23,7 @@ exports.handler = async (event, context) => {
   const params = event.queryStringParameters;
   const page = parseInt(params.page || '1', 10);
   const limit = parseInt(params.limit || '10', 10);
-  const offset = (page - 1) * limit;
+  const offset = (page) * limit;
   
   const { data, count, error } = await supabase
     .from('tools')
@@ -32,13 +32,13 @@ exports.handler = async (event, context) => {
   
   if (error) {
     return {
-      statusCode: 500,
+      statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       },
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({data:[]}),
     };
   }
   
