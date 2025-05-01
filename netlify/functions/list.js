@@ -44,7 +44,7 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      page,
+      offset,
       limit,
       total: count,
       totalPages: Math.ceil(count / limit),
